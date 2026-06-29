@@ -1,605 +1,490 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alireza Hassani · Full-Stack Developer & Researcher</title>
 
-<title>Alireza Hassani | Researcher & Software Engineer</title>
+    <!-- Primary SEO Meta Tags -->
+    <meta name="description" content="Alireza Hassani – Full-Stack Developer & Researcher with 10+ years expertise in Django, Vue.js, C#, GIS, WSN, and quantitative finance. Open for roles, Master's & PhD." />
+    <meta name="keywords" content="Alireza Hassani, Full-Stack Developer, Researcher, Django, Vue.js, C#, ASP.NET Core, GIS, Wireless Sensor Networks, Quantitative Finance, PhD, Machine Learning" />
+    <meta name="author" content="Alireza Hassani" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://arhassani.github.io/" />
 
-<meta name="description"
-      content="Alireza Hassani - Researcher in Quantitative Finance, Algorithmic Trading, Financial Analytics, and Artificial Intelligence.">
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="Alireza Hassani · Full-Stack Developer & Researcher" />
+    <meta property="og:description" content="Full-Stack Developer and Researcher · Django, Vue.js, C#, GIS, WSN. Open for research and industry roles." />
+    <meta property="og:url" content="https://arhassani.github.io/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://arhassani.github.io/profile.jpg" />
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Tailwind + Font Awesome -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-<style>
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Alireza Hassani",
+      "jobTitle": "Full-Stack Developer & Researcher",
+      "url": "https://arhassani.github.io/",
+      "email": "alirezahassani64@yahoo.com",
+      "sameAs": [
+        "https://github.com/arhassani",
+        "https://linkedin.com/in/alirezahassani64"
+      ],
+      "knowsAbout": ["Django", "Vue.js", "C#", "ASP.NET Core", "GIS", "Wireless Sensor Networks", "Quantitative Finance", "Machine Learning"]
+    }
+    </script>
 
-:root{
-    --primary:#2563eb;
-    --secondary:#0f172a;
-    --light:#f8fafc;
-    --white:#ffffff;
-    --gray:#64748b;
-    --border:#e2e8f0;
-}
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:'Inter',sans-serif;
-    background:var(--light);
-    color:#1e293b;
-    line-height:1.8;
-}
-
-.container{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
-}
-
-nav{
-    position:fixed;
-    top:0;
-    width:100%;
-    background:rgba(255,255,255,.95);
-    backdrop-filter:blur(12px);
-    z-index:1000;
-    border-bottom:1px solid var(--border);
-}
-
-.nav-container{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:18px 0;
-}
-
-.logo{
-    font-size:1.3rem;
-    font-weight:800;
-    color:var(--secondary);
-}
-
-.nav-links a{
-    margin-left:25px;
-    text-decoration:none;
-    color:var(--secondary);
-    font-weight:500;
-}
-
-.nav-links a:hover{
-    color:var(--primary);
-}
-
-.hero{
-    padding-top:150px;
-    padding-bottom:100px;
-}
-
-.hero-content{
-    display:grid;
-    grid-template-columns:300px 1fr;
-    gap:60px;
-    align-items:center;
-}
-
-.profile-image{
-    width:280px;
-    height:280px;
-    border-radius:50%;
-    object-fit:cover;
-    border:6px solid white;
-    box-shadow:0 20px 50px rgba(0,0,0,.15);
-}
-
-.hero h1{
-    font-size:3rem;
-    margin-bottom:10px;
-    color:var(--secondary);
-}
-
-.hero h2{
-    color:var(--primary);
-    font-size:1.4rem;
-    margin-bottom:20px;
-}
-
-.hero p{
-    color:var(--gray);
-    font-size:1.05rem;
-}
-
-.buttons{
-    margin-top:30px;
-}
-
-.btn{
-    display:inline-block;
-    padding:14px 28px;
-    border-radius:10px;
-    text-decoration:none;
-    font-weight:600;
-    margin-right:15px;
-}
-
-.btn-primary{
-    background:var(--primary);
-    color:white;
-}
-
-.btn-outline{
-    border:2px solid var(--primary);
-    color:var(--primary);
-}
-
-section{
-    padding:90px 0;
-}
-
-.section-title{
-    font-size:2.2rem;
-    margin-bottom:40px;
-    text-align:center;
-    color:var(--secondary);
-}
-
-.card{
-    background:white;
-    border-radius:18px;
-    padding:35px;
-    box-shadow:0 10px 30px rgba(0,0,0,.05);
-    margin-bottom:25px;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:25px;
-}
-
-.card h3{
-    margin-bottom:15px;
-    color:var(--secondary);
-}
-
-.skills{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-}
-
-.skill{
-    background:#dbeafe;
-    color:#1e40af;
-    padding:8px 15px;
-    border-radius:999px;
-    font-size:.9rem;
-    font-weight:600;
-}
-
-.timeline{
-    border-left:3px solid var(--primary);
-    padding-left:25px;
-}
-
-.timeline-item{
-    margin-bottom:35px;
-}
-
-.timeline-item h4{
-    color:var(--primary);
-}
-
-.contact-links a{
-    display:block;
-    margin-bottom:12px;
-    color:var(--primary);
-    text-decoration:none;
-}
-
-footer{
-    background:var(--secondary);
-    color:white;
-    text-align:center;
-    padding:40px;
-    margin-top:50px;
-}
-
-.stats{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:20px;
-    text-align:center;
-    margin-top:50px;
-}
-
-.stat{
-    background:white;
-    border-radius:15px;
-    padding:25px;
-}
-
-.stat h3{
-    color:var(--primary);
-    font-size:2rem;
-}
-
-@media(max-width:900px){
-
-.hero-content{
-    grid-template-columns:1fr;
-    text-align:center;
-}
-
-.profile-image{
-    margin:auto;
-}
-
-.stats{
-    grid-template-columns:repeat(2,1fr);
-}
-
-.nav-links{
-    display:none;
-}
-
-.hero h1{
-    font-size:2.2rem;
-}
-
-}
-
-</style>
+    <style>
+        /* smooth & glassmorphism touches */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f6f9fc;
+            scroll-behavior: smooth;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .hover-lift {
+            transition: all 0.25s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 35px -8px rgba(0, 20, 80, 0.15);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .section-badge {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1e3a8a;
+            font-weight: 600;
+            padding: 0.25rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+        .nav-blur {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+        }
+        .skill-tag {
+            background: #eef2ff;
+            color: #1e3a8a;
+            padding: 0.5rem 1.2rem;
+            border-radius: 999px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.15s;
+        }
+        .skill-tag:hover {
+            background: #2563eb;
+            color: white;
+            transform: scale(1.03);
+        }
+        .hero-gradient {
+            background: linear-gradient(145deg, #0b1f4b 0%, #1e3a8a 40%, #2563eb 100%);
+        }
+        .btn-soft {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.2s;
+        }
+        .btn-soft:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: scale(1.02);
+        }
+        .profile-img {
+            box-shadow: 0 25px 40px -12px rgba(0, 20, 40, 0.4);
+        }
+        /* mobile menu */
+        .mobile-menu {
+            display: none;
+        }
+        .mobile-menu.open {
+            display: block;
+        }
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+        /* active nav link style */
+        .nav-link-active {
+            color: #2563eb !important;
+            font-weight: 600;
+        }
+    </style>
 </head>
-
 <body>
 
-<nav>
-<div class="container nav-container">
-<div class="logo">Alireza Hassani</div>
-
-<div class="nav-links">
-<a href="#about">About</a>
-<a href="#research">Research</a>
-<a href="#projects">Projects</a>
-<a href="#skills">Skills</a>
-<a href="#education">Education</a>
-<a href="#contact">Contact</a>
-</div>
-</div>
-</nav>
-
-<section class="hero">
-<div class="container hero-content">
-
-<img src="profile.jpg" alt="Alireza Hassani" class="profile-image">
-
-<div>
-
-<h1>Alireza Hassani</h1>
-
-<h2>
-Researcher in Quantitative Finance,
-Algorithmic Trading & Artificial Intelligence
-</h2>
-
-<p>
-Software Engineer with more than 15 years of programming experience and
-a strong research focus on Financial Market Analytics,
-Algorithmic Trading, Machine Learning,
-Quantitative Finance and Advanced Ichimoku Cloud Methodologies.
-
-Currently seeking fully funded PhD opportunities in
-Computational Finance, Financial Engineering,
-Artificial Intelligence and Data Science.
-</p>
-
-<div class="buttons">
-
-<a href="CV.pdf" class="btn btn-primary">
-Download CV
-</a>
-
-<a href="#contact" class="btn btn-outline">
-Contact Me
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="container stats">
-
-<div class="stat">
-<h3>15+</h3>
-<p>Years Programming</p>
-</div>
-
-<div class="stat">
-<h3>96</h3>
-<p>TOEFL Score</p>
-</div>
-
-<div class="stat">
-<h3>10+</h3>
-<p>Research Projects</p>
-</div>
-
-<div class="stat">
-<h3>2026</h3>
-<p>PhD Applications</p>
-</div>
-
-</div>
-</section>
-
-<section id="about">
-<div class="container">
-
-<h2 class="section-title">About Me</h2>
-
-<div class="card">
-
-<p>
-I am a software engineer and researcher specializing in quantitative finance,
-financial time-series analysis, algorithmic trading, and artificial intelligence.
-
-My research focuses on developing intelligent analytical frameworks capable of identifying
-high-probability trading opportunities through advanced technical analysis,
-machine learning, and predictive modeling.
-
-My Master's research introduced a novel approach based on Residual Ichimoku Cloud Analysis
-for identifying future support and resistance structures in financial markets.
-</p>
-
-</div>
-
-</div>
-</section>
-
-<section id="research">
-
-<div class="container">
-
-<h2 class="section-title">Research Interests</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>Quantitative Finance</h3>
-<p>
-Financial modeling, risk management,
-market forecasting and systematic trading strategies.
-</p>
-</div>
-
-<div class="card">
-<h3>Algorithmic Trading</h3>
-<p>
-Development of automated trading systems
-based on statistical and technical methodologies.
-</p>
-</div>
-
-<div class="card">
-<h3>Machine Learning</h3>
-<p>
-Application of AI and ML techniques
-for prediction and financial decision support.
-</p>
-</div>
-
-<div class="card">
-<h3>Financial Analytics</h3>
-<p>
-Large-scale analysis of market data
-and intelligent trading signal generation.
-</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="projects">
-
-<div class="container">
-
-<h2 class="section-title">Research Projects</h2>
-
-<div class="grid">
-
-<div class="card">
-
-<h3>Residual Ichimoku Cloud Research</h3>
-
-<p>
-Development of a novel analytical framework
-for detecting residual cloud structures,
-future support and resistance levels,
-and cloud interaction zones.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Algorithmic Trading Platform</h3>
-
-<p>
-Python-based trading research platform
-including signal generation,
-backtesting and performance evaluation.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Machine Learning for Market Prediction</h3>
-
-<p>
-Exploration of AI techniques for
-forecasting financial market movements
-and improving trading performance.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Industrial Monitoring Platform</h3>
-
-<p>
-Design and implementation of industrial
-analytics systems featuring dashboards,
-predictive monitoring and automation.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="skills">
-
-<div class="container">
-
-<h2 class="section-title">Technical Skills</h2>
-
-<div class="card">
-
-<div class="skills">
-
-<span class="skill">Python</span>
-<span class="skill">C#</span>
-<span class="skill">JavaScript</span>
-<span class="skill">TypeScript</span>
-<span class="skill">FastAPI</span>
-<span class="skill">Node.js</span>
-<span class="skill">Docker</span>
-<span class="skill">Linux</span>
-<span class="skill">Git</span>
-<span class="skill">Pandas</span>
-<span class="skill">NumPy</span>
-<span class="skill">SQL</span>
-<span class="skill">REST APIs</span>
-<span class="skill">Machine Learning</span>
-<span class="skill">Data Analytics</span>
-<span class="skill">Financial Modeling</span>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="education">
-
-<div class="container">
-
-<h2 class="section-title">Academic Profile</h2>
-
-<div class="card timeline">
-
-<div class="timeline-item">
-<h4>Master's Research</h4>
-<p>
-Trading Strategy in Financial Markets Based on Residual Ichimoku Cloud Analysis
-</p>
-</div>
-
-<div class="timeline-item">
-<h4>Bachelor's Degree</h4>
-<p>
-ICT / Electrical Engineering
-</p>
-</div>
-
-<div class="timeline-item">
-<h4>Language Qualifications</h4>
-<p>
-TOEFL Home Edition: 96<br>
-German: A2
-</p>
-</div>
-
-<div class="timeline-item">
-<h4>Future Research Directions</h4>
-<p>
-Computational Finance,
-Explainable AI,
-Financial Engineering,
-Deep Learning,
-Market Forecasting,
-Risk Analytics.
-</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="contact">
-
-<div class="container">
-
-<h2 class="section-title">Contact</h2>
-
-<div class="card">
-
-<div class="contact-links">
-
-<a href="mailto:YOUR_EMAIL">
-alirezahassani64@yahoo.com
-</a>
-
-<a href="https://github.com/ARHASSANI">
-GitHub
-</a>
-
-<a href="https://linkedin.com/in/alirezahassani64">
-LinkedIn
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<footer>
-
-<p>
-© 2026 Alireza Hassani
-</p>
-
-<p>
-Researcher in Quantitative Finance, AI and Algorithmic Trading
-</p>
-
-</footer>
+    <!-- Navigation -->
+    <nav class="nav-blur fixed w-full z-50 transition-shadow" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-extrabold tracking-tight">
+                <span class="gradient-text">Alireza Hassani</span>
+            </div>
+            <!-- desktop menu -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-700">
+                <a href="#about" class="hover:text-blue-600 transition nav-link">About</a>
+                <a href="#experience" class="hover:text-blue-600 transition nav-link">Experience</a>
+                <a href="#research" class="hover:text-blue-600 transition nav-link">Research</a>
+                <a href="#skills" class="hover:text-blue-600 transition nav-link">Skills</a>
+                <a href="#contact" class="hover:text-blue-600 transition nav-link">Contact</a>
+            </div>
+            <!-- mobile toggle -->
+            <div class="md:hidden text-2xl text-slate-700 cursor-pointer" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+        <!-- mobile menu dropdown -->
+        <div class="mobile-menu md:hidden bg-white/95 backdrop-blur-md border-t border-slate-100" id="mobileMenu">
+            <div class="flex flex-col items-center gap-4 py-6 text-sm font-medium text-slate-700">
+                <a href="#about" class="hover:text-blue-600 transition nav-link">About</a>
+                <a href="#experience" class="hover:text-blue-600 transition nav-link">Experience</a>
+                <a href="#research" class="hover:text-blue-600 transition nav-link">Research</a>
+                <a href="#skills" class="hover:text-blue-600 transition nav-link">Skills</a>
+                <a href="#contact" class="hover:text-blue-600 transition nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero-gradient text-white pt-32 pb-20 md:pt-40 md:pb-28" id="home">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/3 flex justify-center">
+                <img src="profile.jpg" alt="Alireza Hassani – Full-Stack Developer and Researcher"
+                     class="w-56 h-56 md:w-72 md:h-72 rounded-full object-cover border-4 border-white/40 profile-img" />
+            </div>
+            <div class="md:w-2/3 text-center md:text-left">
+                <div class="inline-block bg-white/10 backdrop-blur-sm px-4 py-1 rounded-full text-sm font-medium text-blue-100 mb-4">
+                    <i class="fas fa-code mr-2"></i> Open to roles · Master's · PhD
+                </div>
+                <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
+                    Alireza Hassani
+                </h1>
+                <h2 class="text-2xl md:text-3xl font-light text-blue-200 mt-2">
+                    Full-Stack Developer & Researcher
+                </h2>
+                <p class="text-blue-100 text-lg max-w-2xl mt-6 leading-relaxed">
+                    Building robust web applications & pushing research boundaries in wireless sensor networks,
+                    GIS, and quantitative finance. Over 10 years of development & project leadership.
+                </p>
+                <div class="flex flex-wrap gap-4 mt-8 justify-center md:justify-start">
+                    <a href="#contact" class="bg-white text-blue-700 px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition hover:scale-105">
+                        <i class="fas fa-paper-plane mr-2"></i> Contact
+                    </a>
+                    <a href="https://github.com/arhassani" target="_blank" class="btn-soft text-white px-8 py-3 rounded-full font-semibold">
+                        <i class="fab fa-github mr-2"></i> GitHub
+                    </a>
+                    <a href="https://linkedin.com/in/alirezahassani64" target="_blank" class="btn-soft text-white px-8 py-3 rounded-full font-semibold">
+                        <i class="fab fa-linkedin-in mr-2"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-20 bg-white scroll-mt-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="section-badge"><i class="fas fa-user mr-2"></i> About</span>
+                <h2 class="text-4xl font-bold text-slate-800 mt-2">Driven by code & curiosity</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-lg text-slate-600 leading-relaxed space-y-6">
+                    <p>
+                        <span class="font-semibold text-slate-800">10+ years</span> of experience across the full stack — from
+                        Django and Vue.js to C# and GIS. I blend engineering discipline with research mindset to deliver
+                        scalable, data-informed solutions.
+                    </p>
+                    <p>
+                        My research spans <span class="font-medium text-slate-800">wireless sensor networks</span>,
+                        <span class="font-medium text-slate-800">GIS</span> and
+                        <span class="font-medium text-slate-800">quantitative finance</span> — with a focus on
+                        bridging academic insight and practical impact.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-2">
+                        <span class="flex items-center gap-2 bg-blue-50 px-4 py-2 rounded-full text-sm text-blue-700"><i class="fas fa-check-circle text-blue-500"></i> Django REST</span>
+                        <span class="flex items-center gap-2 bg-blue-50 px-4 py-2 rounded-full text-sm text-blue-700"><i class="fas fa-check-circle text-blue-500"></i> Vue.js</span>
+                        <span class="flex items-center gap-2 bg-blue-50 px-4 py-2 rounded-full text-sm text-blue-700"><i class="fas fa-check-circle text-blue-500"></i> C# / ASP.NET</span>
+                        <span class="flex items-center gap-2 bg-blue-50 px-4 py-2 rounded-full text-sm text-blue-700"><i class="fas fa-check-circle text-blue-500"></i> GIS (PostGIS)</span>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-blue-50 p-6 rounded-2xl text-center hover-lift">
+                        <div class="text-3xl font-bold text-blue-600">10+</div>
+                        <div class="text-sm text-slate-600">Years experience</div>
+                    </div>
+                    <div class="bg-blue-50 p-6 rounded-2xl text-center hover-lift">
+                        <div class="text-3xl font-bold text-blue-600">7</div>
+                        <div class="text-sm text-slate-600">Research projects</div>
+                    </div>
+                    <div class="bg-blue-50 p-6 rounded-2xl text-center hover-lift">
+                        <div class="text-3xl font-bold text-blue-600">4</div>
+                        <div class="text-sm text-slate-600">Domains</div>
+                    </div>
+                    <div class="bg-blue-50 p-6 rounded-2xl text-center hover-lift">
+                        <div class="text-3xl font-bold text-blue-600">96</div>
+                        <div class="text-sm text-slate-600">TOEFL score</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="py-20 bg-slate-50 scroll-mt-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-14">
+                <span class="section-badge"><i class="fas fa-briefcase mr-2"></i> Career</span>
+                <h2 class="text-4xl font-bold text-slate-800 mt-2">Professional experience</h2>
+            </div>
+            <div class="space-y-8">
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover-lift">
+                    <div class="flex flex-wrap items-start justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold text-slate-800">Full-Stack Developer & Project Manager</h3>
+                            <p class="text-blue-600 font-medium"><i class="far fa-building mr-2"></i> parsia afzar faraandishan novin</p>
+                        </div>
+                        <span class="text-sm bg-blue-50 text-blue-700 px-4 py-1 rounded-full font-medium">Feb 2023 – Present</span>
+                    </div>
+                    <ul class="mt-5 space-y-2 text-slate-600">
+                        <li class="flex items-start gap-3"><i class="fas fa-circle text-blue-500 text-xs mt-2"></i> Django, Vue.js, C# / ASP.NET Core – full-cycle development.</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-circle text-blue-500 text-xs mt-2"></i> GIS mapping with Leaflet.js & PostGIS, interactive dashboards.</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-circle text-blue-500 text-xs mt-2"></i> PDF report generation (ReportLab) & team coordination.</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover-lift">
+                    <div class="flex flex-wrap items-start justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold text-slate-800">Project Manager</h3>
+                            <p class="text-blue-600 font-medium"><i class="far fa-building mr-2"></i> Behine Sazeh Gostaran Tirazis</p>
+                        </div>
+                        <span class="text-sm bg-blue-50 text-blue-700 px-4 py-1 rounded-full font-medium">2019 – 2021</span>
+                    </div>
+                    <ul class="mt-5 space-y-2 text-slate-600">
+                        <li class="flex items-start gap-3"><i class="fas fa-circle text-blue-500 text-xs mt-2"></i> Technical coordination, risk mitigation & design review.</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-circle text-blue-500 text-xs mt-2"></i> Stakeholder communication & delivery management.</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover-lift">
+                    <div class="flex flex-wrap items-start justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold text-slate-800">Software Engineer</h3>
+                            <p class="text-blue-600 font-medium"><i class="far fa-building mr-2"></i> Sepanta</p>
+                        </div>
+                        <span class="text-sm bg-blue-50 text-blue-700 px-4 py-1 rounded-full font-medium">2016 – 2018</span>
+                    </div>
+                    <ul class="mt-5 space-y-2 text-slate-600">
+                        <li class="flex items-start gap-3"><i class="fas fa-circle text-blue-500 text-xs mt-2"></i> C#, MVC, JavaScript, SQL – ISP automation systems.</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-circle text-blue-500 text-xs mt-2"></i> Built management tools and optimized workflows.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research + Education (all research projects included) -->
+    <section id="research" class="py-20 bg-white scroll-mt-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-14">
+                <span class="section-badge"><i class="fas fa-flask mr-2"></i> Research</span>
+                <h2 class="text-4xl font-bold text-slate-800 mt-2">Research & academic profile</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- left: all research projects -->
+                <div class="space-y-6">
+                    <div class="bg-slate-50 p-7 rounded-2xl border border-slate-100 hover-lift">
+                        <h3 class="text-xl font-bold text-slate-800 flex items-center gap-2"><i class="fas fa-project-diagram text-blue-500"></i> Wireless Sensor Networks</h3>
+                        <p class="text-slate-600 mt-2">Routing protocols and network architecture for efficient data collection in WSN.</p>
+                    </div>
+                    <div class="bg-slate-50 p-7 rounded-2xl border border-slate-100 hover-lift">
+                        <h3 class="text-xl font-bold text-slate-800 flex items-center gap-2"><i class="fas fa-chart-line text-blue-500"></i> Residual Ichimoku Cloud</h3>
+                        <p class="text-slate-600 mt-2">Novel analytical framework for detecting residual cloud structures, future support/resistance, and cloud interaction zones.</p>
+                    </div>
+                    <div class="bg-slate-50 p-7 rounded-2xl border border-slate-100 hover-lift">
+                        <h3 class="text-xl font-bold text-slate-800 flex items-center gap-2"><i class="fas fa-robot text-blue-500"></i> Algorithmic Trading Platform</h3>
+                        <p class="text-slate-600 mt-2">Python-based platform including signal generation, backtesting, and performance evaluation.</p>
+                    </div>
+                    <div class="bg-slate-50 p-7 rounded-2xl border border-slate-100 hover-lift">
+                        <h3 class="text-xl font-bold text-slate-800 flex items-center gap-2"><i class="fas fa-brain text-blue-500"></i> ML for Market Prediction</h3>
+                        <p class="text-slate-600 mt-2">AI techniques for forecasting financial market movements and improving trading performance.</p>
+                    </div>
+                    <div class="bg-slate-50 p-7 rounded-2xl border border-slate-100 hover-lift">
+                        <h3 class="text-xl font-bold text-slate-800 flex items-center gap-2"><i class="fas fa-industry text-blue-500"></i> Industrial Monitoring Platform</h3>
+                        <p class="text-slate-600 mt-2">Industrial analytics with dashboards, predictive monitoring, and automation.</p>
+                    </div>
+                </div>
+                <!-- right: education / academic -->
+                <div class="space-y-6">
+                    <div class="bg-blue-50 p-7 rounded-2xl border border-blue-100 hover-lift">
+                        <h3 class="text-xl font-bold text-slate-800"><i class="fas fa-graduation-cap text-blue-500 mr-2"></i> Master's Research</h3>
+                        <p class="text-slate-700 mt-1">Trading Strategy in Financial Markets Based on Residual Ichimoku Cloud Analysis</p>
+                    </div>
+                    <div class="bg-blue-50 p-7 rounded-2xl border border-blue-100 hover-lift">
+                        <h3 class="text-xl font-bold text-slate-800"><i class="fas fa-university text-blue-500 mr-2"></i> Bachelor's Degree</h3>
+                        <p class="text-slate-700 mt-1">ICT & Electrical Engineering</p>
+                    </div>
+                    <div class="bg-blue-50 p-7 rounded-2xl border border-blue-100 hover-lift">
+                        <h3 class="text-xl font-bold text-slate-800"><i class="fas fa-language text-blue-500 mr-2"></i> Language</h3>
+                        <p class="text-slate-700 mt-1">TOEFL Home Edition: 96 · German A2</p>
+                    </div>
+                    <div class="bg-blue-50 p-7 rounded-2xl border border-blue-100 hover-lift">
+                        <h3 class="text-xl font-bold text-slate-800"><i class="fas fa-rocket text-blue-500 mr-2"></i> Future directions</h3>
+                        <p class="text-slate-700 mt-1">Computational Finance · Explainable AI · Financial Engineering · Deep Learning · Risk Analytics</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="py-20 bg-slate-50 scroll-mt-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-14">
+                <span class="section-badge"><i class="fas fa-cogs mr-2"></i> Expertise</span>
+                <h2 class="text-4xl font-bold text-slate-800 mt-2">Technical skills</h2>
+            </div>
+            <div class="flex flex-wrap justify-center gap-3">
+                <span class="skill-tag"><i class="fab fa-python mr-1"></i> Django & DRF</span>
+                <span class="skill-tag"><i class="fab fa-vuejs mr-1"></i> Vue.js</span>
+                <span class="skill-tag"><i class="fas fa-code mr-1"></i> C# / ASP.NET Core</span>
+                <span class="skill-tag"><i class="fas fa-globe mr-1"></i> GIS (Leaflet + PostGIS)</span>
+                <span class="skill-tag"><i class="fab fa-python mr-1"></i> Python</span>
+                <span class="skill-tag"><i class="fas fa-robot mr-1"></i> Machine Learning</span>
+                <span class="skill-tag"><i class="fas fa-file-pdf mr-1"></i> ReportLab</span>
+                <span class="skill-tag"><i class="fas fa-tasks mr-1"></i> Project Management</span>
+                <span class="skill-tag"><i class="fas fa-database mr-1"></i> PostgreSQL / SQL</span>
+                <span class="skill-tag"><i class="fas fa-cloud mr-1"></i> REST APIs</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact (with GitHub added to "Let's connect") -->
+    <section id="contact" class="py-20 bg-white scroll-mt-20">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <span class="section-badge"><i class="fas fa-envelope mr-2"></i> Get in touch</span>
+            <h2 class="text-4xl font-bold text-slate-800 mt-2">Let's connect</h2>
+            <p class="text-slate-600 text-lg mt-4 max-w-xl mx-auto">Open for research collaborations, full-time roles, Master's or PhD opportunities.</p>
+            <div class="mt-10 flex flex-wrap justify-center gap-4">
+                <a href="mailto:alirezahassani64@yahoo.com"
+                   class="inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white text-lg font-semibold px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl transition">
+                    <i class="fas fa-paper-plane"></i> Email
+                </a>
+                <a href="https://linkedin.com/in/alirezahassani64" target="_blank"
+                   class="inline-flex items-center gap-3 bg-slate-100 hover:bg-slate-200 text-slate-700 text-lg font-semibold px-8 py-4 rounded-2xl transition">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://github.com/arhassani" target="_blank"
+                   class="inline-flex items-center gap-3 bg-slate-100 hover:bg-slate-200 text-slate-700 text-lg font-semibold px-8 py-4 rounded-2xl transition">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+            <div class="mt-6 text-slate-500 text-sm">
+                <i class="fas fa-envelope mr-1"></i> alirezahassani64@yahoo.com
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-10 text-center">
+        <div class="max-w-6xl mx-auto px-6">
+            <p class="text-sm text-slate-300">© 2026 Alireza Hassani · Full-Stack Developer & Researcher</p>
+            <div class="flex justify-center gap-6 mt-4 text-slate-400 text-sm">
+                <a href="https://github.com/arhassani" target="_blank" class="hover:text-white transition"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://linkedin.com/in/alirezahassani64" target="_blank" class="hover:text-white transition"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="mailto:alirezahassani64@yahoo.com" class="hover:text-white transition"><i class="fas fa-envelope"></i> Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile menu toggle script + smooth scroll fix -->
+    <script>
+        (function() {
+            // Mobile menu toggle
+            const toggle = document.getElementById('menuToggle');
+            const menu = document.getElementById('mobileMenu');
+            if (toggle && menu) {
+                toggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    menu.classList.toggle('open');
+                });
+                // close on link click
+                menu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        menu.classList.remove('open');
+                    });
+                });
+                // close on outside click
+                document.addEventListener('click', function(e) {
+                    if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+                        menu.classList.remove('open');
+                    }
+                });
+            }
+
+            // Smooth scroll for all anchor links (prevents default jump)
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        const navHeight = document.getElementById('navbar').offsetHeight;
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight - 10;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                        // update URL without jumping
+                        history.pushState(null, null, targetId);
+                    }
+                });
+            });
+
+            // Active nav link highlight on scroll
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            window.addEventListener('scroll', () => {
+                let current = '';
+                const navHeight = document.getElementById('navbar').offsetHeight;
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - navHeight - 100;
+                    if (window.pageYOffset >= sectionTop) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                navLinks.forEach(link => {
+                    link.classList.remove('nav-link-active');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('nav-link-active');
+                    }
+                });
+            });
+        })();
+    </script>
 
 </body>
 </html>
